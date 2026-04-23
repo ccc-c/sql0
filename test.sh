@@ -73,7 +73,8 @@ fi
 
 # 驗證 B+ Tree 排序是否正確 (alice 應該在 dave 前面)
 # [修正點]：將 grep -oP 替換為 macOS (BSD) 支援的 awk
-ORDER_CHECK=$(echo "$OUTPUT2" | grep "^(" | awk -F'[(,]' '{print $2}' | tr '\n' ' ')
+# ORDER_CHECK=$(echo "$OUTPUT2" | grep "^(" | awk -F'[(,]' '{print $2}' | tr '\n' ' ')
+ORDER_CHECK=$(echo "$OUTPUT2" | grep "(" | awk -F'[(,]' '{print $2}' | tr '\n' ' ')
 
 if [[ "$ORDER_CHECK" == *"1 2 3 4 5 "* ]]; then
     echo -e "  [${GREEN}PASS${NC}] B+ Tree kept rows sorted after split."
