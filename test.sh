@@ -9,14 +9,6 @@ echo "======================================"
 echo "    sql0 (B+ Tree Database) Tester    "
 echo "======================================"
 
-# 1. 編譯 C 程式
-echo "=> Compiling sql0.c..."
-gcc -O3 sql0.c -o sql0
-if [ $? -ne 0 ]; then
-    echo -e "${RED}Compilation failed!${NC}"
-    exit 1
-fi
-echo -e "${GREEN}Compilation successful.${NC}"
 
 # 2. 清理舊資料庫檔案
 echo "=> Cleaning up old database file..."
